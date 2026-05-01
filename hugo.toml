@@ -1,9 +1,10 @@
-# 站点基础
 baseURL = 'https://lineance.github.io/'
 languageCode = 'zh-cn'
 title = 'Lineance Lensit'
 theme = 'github.com/adityatelange/hugo-PaperMod'
-paginate = 5
+
+[pagination]
+  pagerSize = 5
 
 [markup]
   [markup.goldmark]
