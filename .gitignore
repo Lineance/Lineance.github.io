@@ -1,0 +1,21 @@
+# Hugo 构建输出
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# 本地 Hugo 二进制（Windows / Linux / macOS）
+hugo.exe
+hugo
+hugo.darwin
+hugo.linux
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

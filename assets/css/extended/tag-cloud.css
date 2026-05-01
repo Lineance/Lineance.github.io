@@ -1,0 +1,91 @@
+.tag-cloud-container {
+    margin: 24px 0;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.tag-cloud-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    background: var(--entry);
+    color: var(--secondary);
+    transition: all 0.2s ease;
+    line-height: 1.4;
+}
+
+.tag-cloud-item:hover {
+    color: var(--primary);
+    border-color: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tag-count {
+    font-size: 0.75em;
+    padding: 1px 7px;
+    border-radius: 10px;
+    background: var(--border);
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+/* 5 级字体大小 */
+.tag-level-1 {
+    font-size: 0.9rem;
+}
+
+.tag-level-2 {
+    font-size: 1.05rem;
+}
+
+.tag-level-3 {
+    font-size: 1.2rem;
+}
+
+.tag-level-4 {
+    font-size: 1.4rem;
+}
+
+.tag-level-5 {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+/* 热度颜色（可选，暗色模式自动适配） */
+.tag-level-1 {
+    opacity: 0.7;
+}
+
+.tag-level-5 {
+    color: var(--primary);
+    border-color: var(--secondary);
+}
+
+/* 暗色模式 */
+.dark .tag-cloud-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 移动端 */
+@media (max-width: 768px) {
+    .tag-cloud {
+        gap: 8px 10px;
+        padding: 12px;
+    }
+
+    .tag-level-5 {
+        font-size: 1.4rem;
+    }
+}

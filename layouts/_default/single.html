@@ -1,0 +1,70 @@
+{{ define "main" }}
+
+<div class="post-layout">
+    <!-- 左栏：TOC -->
+    {{- if (.Param "ShowToc") }}
+    <aside class="left-sidebar">
+        {{- partial "toc.html" . }}
+    </aside>
+    {{- end }}
+
+    <!-- 中栏：文章 -->
+    <article class="post-single">
+        <header class="post-header">
+            <h1 class="post-title">{{ .Title }}</h1>
+            {{- if .Description }}
+            <div class="post-description">{{ .Description }}</div>
+            {{- end }}
+            {{- partial "post_meta.html" . }}
+        </header>
+
+        {{- if .Content }}
+        <div class="post-content">{{ .Content }}</div>
+        {{- end }}
+
+        <footer class="post-footer">
+            {{- if .Params.tags }}
+            <ul class="post-tags">
+                {{- range .Params.tags }}
+                <li><a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+                {{- end }}
+            </ul>
+            {{- end }}
+        </footer>
+
+        {{- if not .Site.Params.disableComments }}
+        {{- partial "comments.html" . }}
+        {{- end }}
+    </article>
+
+    <!-- 右栏：组件 -->
+    <aside class="right-sidebar">
+        <div class="right-widget profile-card">
+            {{- with .Site.Params.profile.avatar }}
+            <img src="{{ . }}" alt="avatar" class="profile-avatar" loading="lazy">
+            {{- end }}
+            <div class="profile-name">{{ .Site.Params.profile.name | default .Site.Title }}</div>
+            <div class="profile-bio">{{ .Site.Params.profile.bio | default "" }}</div>
+            {{- with .Site.Params.profile.links }}
+            <div class="profile-links">
+                {{- range . }}
+                <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+                {{- end }}
+            </div>
+            {{- end }}
+        </div>
+
+        {{- if .Params.tags }}
+        <div class="right-widget tags-card">
+            <h3>本文标签</h3>
+            <div class="tags-list">
+                {{- range .Params.tags }}
+                <a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}" class="tag-item">#{{ . }}</a>
+                {{- end }}
+            </div>
+        </div>
+        {{- end }}
+    </aside>
+</div>
+
+{{- end }}

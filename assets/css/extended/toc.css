@@ -1,0 +1,90 @@
+/* ========== 左栏容器 ========== */
+.left-sidebar {
+    display: none;
+    order: 1;
+    width: 280px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    position: sticky;
+    top: calc(var(--gap) * 2);
+}
+
+@media (min-width: 1280px) {
+    .left-sidebar {
+        display: block;
+    }
+}
+
+/* 强制覆盖 toc.html 内部 absolute 定位（因为现在不在 post-single 内部了） */
+.left-sidebar .toc-container.wide,
+.left-sidebar .toc-container {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    border-right: none !important;
+    height: auto !important;
+}
+
+/* 恢复最初成功的 Sulv TOC 样式 */
+.left-sidebar .toc {
+    margin: 0 2px 40px 2px;
+    border: 1px solid var(--border);
+    background: var(--entry);
+    border-radius: var(--radius);
+    padding: 0.4em;
+    width: 100%;
+}
+
+.left-sidebar .toc details summary {
+    cursor: zoom-in;
+    margin-inline-start: 20px;
+    padding: 12px 0;
+}
+
+.left-sidebar .toc details[open] summary {
+    font-weight: 500;
+}
+
+.left-sidebar .toc-container.wide .toc .inner {
+    margin: 0;
+}
+
+.left-sidebar .toc .active {
+    font-size: 110%;
+    font-weight: 600;
+}
+
+.left-sidebar .toc ul {
+    list-style-type: circle;
+}
+
+/* 原版 inner：83vh 滚动 + 16px 字体 */
+.left-sidebar .toc .inner {
+    margin: 0 0 0 20px;
+    padding: 0px 15px 15px 20px;
+    font-size: 16px;
+    max-height: 83vh;
+    overflow-y: auto;
+}
+
+.left-sidebar .toc .inner::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border: 7px solid var(--theme);
+    border-radius: var(--radius);
+}
+
+.left-sidebar .toc li ul {
+    margin-inline-start: calc(var(--gap) * 0.5);
+    list-style-type: none;
+}
+
+.left-sidebar .toc li {
+    list-style: none;
+    font-size: 0.95rem;
+    padding-bottom: 5px;
+}
+
+.left-sidebar .toc li a:hover {
+    color: var(--secondary);
+}

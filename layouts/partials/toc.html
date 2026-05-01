@@ -1,0 +1,59 @@
+{{- if (.Param "ShowToc") }}
+{{- $toc := .TableOfContents }}
+{{- if $toc }}
+<div class="toc-container wide">
+    <div class="toc">
+        <details {{if (.Param "TocOpen" ) }} open{{ end }}>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">{{- i18n "toc" | default "Table of Contents" }}</span>
+            </summary>
+            <div class="inner">
+                {{ $toc | safeHTML }}
+            </div>
+        </details>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tocDetails = document.querySelector(".toc details");
+        if (tocDetails) tocDetails.open = true;
+
+        const tocElement = document.querySelector(".toc");
+        if (!tocElement) return;
+
+        const tocItems = tocElement.querySelectorAll("li a");
+        const headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+
+        let activeItem = null;
+
+        function updateActiveToc() {
+            let scrollPos = window.scrollY + 120;
+            let current = null;
+
+            for (let h of headings) {
+                if (h.offsetTop <= scrollPos) current = h;
+                else break;
+            }
+
+            if (!current) return;
+
+            const id = current.getAttribute("id");
+            for (let item of tocItems) {
+                const href = item.getAttribute("href");
+                if (href === "#" + id) {
+                    if (activeItem) activeItem.classList.remove("active");
+                    item.classList.add("active");
+                    activeItem = item;
+                    // 删除 scrollIntoView，避免滚动劫持
+                    break;
+                }
+            }
+        }
+
+        window.addEventListener("scroll", updateActiveToc, { passive: true });
+        updateActiveToc();
+    });
+</script>
+{{- end }}
+{{- end }}

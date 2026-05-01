@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<article class="about-academic">
+    <!-- 顶部档案 -->
+    <header class="academic-header">
+        <div class="academic-profile">
+            {{- $avatar := .Site.Params.profile.avatar | default .Site.Params.profileMode.imageUrl }}
+            {{- with $avatar }}
+            <img src="{{ . }}" alt="avatar" class="academic-avatar" loading="lazy">
+            {{- end }}
+            <div class="academic-info">
+                <h1 class="academic-name">{{ .Site.Params.profile.name | default .Site.Title }}</h1>
+                <p class="academic-title">{{ .Site.Params.profile.title | default "" }}</p>
+                <p class="academic-affiliation">{{ .Site.Params.profile.affiliation | default "" }}</p>
+                <p class="academic-email">
+                    {{- with .Site.Params.profile.email }}
+                    <a href="mailto:{{ . }}">{{ . }}</a>
+                    {{- end }}
+                </p>
+            </div>
+        </div>
+
+        {{- with .Site.Params.profile.links }}
+        <nav class="academic-links">
+            {{- range . }}
+            <a href="{{ .url }}" target="_blank" rel="noopener" class="academic-link">
+                <span class="link-name">{{ .name }}</span>
+            </a>
+            {{- end }}
+        </nav>
+        {{- end }}
+    </header>
+
+    <!-- Markdown 内容 -->
+    {{- if .Content }}
+    <section class="academic-content">
+        {{ .Content }}
+    </section>
+    {{- end }}
+</article>
+
+{{- end }}

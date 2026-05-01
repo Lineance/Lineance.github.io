@@ -1,0 +1,87 @@
+# 站点基础
+baseURL = 'https://lineance.github.io/'
+languageCode = 'zh-cn'
+title = 'Lineance Lensit'
+theme = 'github.com/adityatelange/hugo-PaperMod'
+paginate = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true              
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true               # 显示行号
+    lineNumbersInTable = true    # 行号单独成列
+    noClasses = false            # 使用 CSS 类（方便自定义）
+    style = 'dracula'            # 主题：dracula / github / monokai
+
+# 核心参数
+[params]
+
+  [params.profile]
+  name = "Lineance"
+  bio = "Learn lifelong, live limitlessly, love lavishly, leave a lasting legacy."
+  avatar = "/img/avatar.png"
+
+  # Profile Mode
+  [params.profileMode]
+    enabled = true
+    title = 'Lineance'
+    subtitle = 'Learn. Journey. Bloom.'
+    imageUrl = 'img/avatar.png'  # 头像路径：static/img/avatar.png
+    imageWidth = 120
+    imageHeight = 120
+
+  # 社交图标
+  [[params.socialIcons]]
+    name = 'email'
+    url = 'mailto:you@email.com'
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/Lineance'
+  [[params.socialIcons]]
+    name = 'google-scholar'
+    url = 'https://scholar.google.com/citations?user=xxx'
+
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowTags = true
+  ShowCategories = true
+
+  math = true 
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+# 导航菜单
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = '首页'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'about'
+    name = '关于'
+    url = '/about'
+    weight = 20
+  [[menu.main]]
+    identifier = 'posts'
+    name = '博客'
+    url = '/posts'
+    weight = 30
+  [[menu.main]]
+    identifier = 'tags'
+    name = '标签'
+    url = '/tags'
+    weight = 40
+  [[menu.main]]
+    identifier = 'archives'
+    name = '归档'
+    url = '/archives'
+    weight = 50

@@ -1,0 +1,203 @@
+/* ========== Academic About Page ========== */
+.about-academic {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 var(--gap);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* ---------- Header ---------- */
+.academic-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+}
+
+.academic-profile {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 24px;
+}
+
+.academic-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+}
+
+.academic-info {
+    flex: 1;
+}
+
+.academic-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.3px;
+}
+
+.academic-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary);
+    margin: 0 0 4px 0;
+}
+
+.academic-affiliation {
+    font-size: 14px;
+    color: var(--secondary);
+    margin: 0 0 8px 0;
+    opacity: 0.85;
+}
+
+.academic-email a {
+    font-size: 14px;
+    color: var(--secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.academic-email a:hover {
+    color: var(--primary);
+    border-color: var(--secondary);
+}
+
+/* ---------- Links Bar ---------- */
+.academic-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.academic-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--entry);
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.academic-link:hover {
+    color: var(--primary);
+    border-color: var(--secondary);
+    background: var(--theme);
+    transform: translateY(-1px);
+}
+
+/* ---------- Content ---------- */
+.academic-content h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 40px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.academic-content h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.academic-content p {
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+.academic-content ul,
+.academic-content ol {
+    margin-bottom: 18px;
+    padding-left: 24px;
+}
+
+.academic-content li {
+    margin-bottom: 8px;
+}
+
+.academic-content li::marker {
+    color: var(--secondary);
+}
+
+/* 论文/项目列表 */
+.academic-content ul li strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* 时间标注 */
+.academic-content em,
+.academic-content time {
+    font-style: normal;
+    font-size: 0.9em;
+    color: var(--secondary);
+    opacity: 0.8;
+}
+
+/* 引用块 */
+.academic-content blockquote {
+    margin: 24px 0;
+    padding: 14px 20px;
+    border-left: 3px solid var(--secondary);
+    background: var(--entry);
+    color: var(--secondary);
+    font-size: 15px;
+}
+
+.academic-content blockquote p {
+    margin: 0;
+}
+
+/* 行内代码 */
+.academic-content code {
+    background: var(--border);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--primary);
+}
+
+/* 分割线 */
+.academic-content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 36px 0;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+    .academic-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+    }
+
+    .academic-avatar {
+        width: 90px;
+        height: 90px;
+    }
+
+    .academic-name {
+        font-size: 24px;
+    }
+
+    .academic-links {
+        justify-content: center;
+    }
+}

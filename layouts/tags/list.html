@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+<header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{ if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{ end }}
+</header>
+
+<div class="tag-cloud-container">
+    {{ $tags := .Data.Terms.ByCount }}
+    {{ $maxCount := 0 }}
+    {{ $minCount := 99999 }}
+
+    {{ range $tags }}
+    {{ if gt .Count $maxCount }}{{ $maxCount = .Count }}{{ end }}
+    {{ if lt .Count $minCount }}{{ $minCount = .Count }}{{ end }}
+    {{ end }}
+
+    {{ $diff := sub $maxCount $minCount }}
+    {{ if eq $diff 0 }}{{ $diff = 1 }}{{ end }}
+
+    <div class="tag-cloud">
+        {{ range $tags }}
+        {{ $ratio := div (sub .Count $minCount) $diff }}
+        {{ $level := add 1 (mul 4 $ratio) }} <!-- 1.0 ~ 5.0 -->
+
+        <a href="{{ .Page.RelPermalink }}" class="tag-cloud-item tag-level-{{ math.Round $level }}"
+            title="{{ .Count }} 篇文章">
+            {{ .Page.Title }}
+            <span class="tag-count">{{ .Count }}</span>
+        </a>
+        {{ end }}
+    </div>
+</div>
+
+{{ end }}
