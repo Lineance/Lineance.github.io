@@ -38,33 +38,9 @@
     </article>
 
     <!-- 右栏：组件 -->
-    <aside class="right-sidebar">
-        <div class="right-widget profile-card">
-            {{- with .Site.Params.profile.avatar }}
-            <img src="{{ . }}" alt="avatar" class="profile-avatar" loading="lazy">
-            {{- end }}
-            <div class="profile-name">{{ .Site.Params.profile.name | default .Site.Title }}</div>
-            <div class="profile-bio">{{ .Site.Params.profile.bio | default "" }}</div>
-            {{- with .Site.Params.profile.links }}
-            <div class="profile-links">
-                {{- range . }}
-                <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-                {{- end }}
-            </div>
-            {{- end }}
-        </div>
-
-        {{- if .Params.tags }}
-        <div class="right-widget tags-card">
-            <h3>本文标签</h3>
-            <div class="tags-list">
-                {{- range .Params.tags }}
-                <a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}" class="tag-item">#{{ . }}</a>
-                {{- end }}
-            </div>
-        </div>
-        {{- end }}
-    </aside>
+    {{- if (.Param "ShowRightSidebar") }}
+    {{- partial "right-sidebar.html" . }}
+    {{- end }}
 </div>
 
 {{- end }}

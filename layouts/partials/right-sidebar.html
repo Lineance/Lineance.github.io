@@ -1,0 +1,67 @@
+<aside class="right-sidebar">
+    {{/* 1. 作者简介：支持文章级覆盖，默认回退到 Site.Params */}}
+    {{- $showProfile := in (.Param "rightSidebarWidgets" | default (slice "profile" "tags")) "profile" }}
+    {{- if $showProfile }}
+    <div class="right-widget profile-card">
+        {{- $avatar := .Params.sidebarAvatar | default .Site.Params.profile.avatar }}
+        {{- with $avatar }}
+        <img src="{{ . }}" alt="avatar" class="profile-avatar" loading="lazy">
+        {{- end }}
+        <div class="profile-name">
+            {{- .Params.sidebarAuthor | default .Site.Params.profile.name | default .Site.Title -}}
+        </div>
+        <div class="profile-bio">
+            {{- .Params.sidebarBio | default .Site.Params.profile.bio | default "" -}}
+        </div>
+        {{- $links := .Params.sidebarLinks | default .Site.Params.profile.links }}
+        {{- with $links }}
+        <div class="profile-links">
+            {{- range . }}
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+            {{- end }}
+        </div>
+        {{- end }}
+    </div>
+    {{- end }}
+
+    {{/* 2. 本文标签 */}}
+    {{- $showTags := in (.Param "rightSidebarWidgets" | default (slice "profile" "tags")) "tags" }}
+    {{- if and $showTags .Params.tags }}
+    <div class="right-widget tags-card">
+        <h3>本文标签</h3>
+        <div class="tags-list">
+            {{- range .Params.tags }}
+            <a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}" class="tag-item">#{{ . }}</a>
+            {{- end }}
+        </div>
+    </div>
+    {{- end }}
+
+    {{/* 3. 自定义内容：任意 Markdown/HTML */}}
+    {{- $showCustom := in (.Param "rightSidebarWidgets" | default (slice "profile" "tags")) "custom" }}
+    {{- if and $showCustom .Params.sidebarCustom }}
+    <div class="right-widget custom-card">
+        {{- .Params.sidebarCustom | markdownify | safeHTML -}}
+    </div>
+    {{- end }}
+
+    {{/* 4. 文章元信息（字数、阅读时间等） */}}
+    {{- $showMeta := in (.Param "rightSidebarWidgets" | default (slice "profile" "tags")) "meta" }}
+    {{- if $showMeta }}
+    <div class="right-widget meta-card">
+        <h3>文章信息</h3>
+        <div class="meta-row">
+            <span>字数</span>
+            <span>{{ .WordCount }}</span>
+        </div>
+        <div class="meta-row">
+            <span>阅读</span>
+            <span>{{ .ReadingTime }} 分钟</span>
+        </div>
+        <div class="meta-row">
+            <span>更新</span>
+            <span>{{ .Lastmod.Format "2006-01-02" }}</span>
+        </div>
+    </div>
+    {{- end }}
+</aside>

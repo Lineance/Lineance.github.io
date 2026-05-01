@@ -6,6 +6,10 @@ slug = 'susctf-2025-newcomers-writeup'
 author = 'laboon'
 tags = ['ctf-writeup']
 showtoc = true
+showrightsidebar = true
+rightSidebarWidgets = ["profile", "tags", "meta"]
+sidebarAuthor = "laboon"
+sidebarBio = "Happy Hacking"
 +++
 
 ---
@@ -1126,7 +1130,7 @@ if __name__ == "__main__":
 
 + 笔者第一次参加的ctf比赛，准备不是非常充分，在之前只下载kali和看了看去年的题目。过程中很多题目都是和ai一起分析出来的，有点human-in-the-loop的味道。并且那个时候ai agentic能力还没有现在这么厉害，使用的也仅仅是DeepSeek的网页对话版本。
 
-之前想过涉及到cve和web_search的题ai表现会不会差一点，但去年强网拿到go proxy转发感觉放到现在对话式也可以自己解答了，看来最终归属只能还是脑洞题了吗
+之前想过涉及到cve和web_search的题ai表现会不会差一点，但感觉去年强网那到go proxy转发放到现在对话式ai也可以自己解答了，看来最终归属只能是脑洞题了吗
 
 ### 吐槽
 
@@ -1158,6 +1162,6 @@ if __name__ == "__main__":
 
 ### 致谢
 
-非常感谢出题和答疑(shui qun)师傅们，没有你们的支持
+非常感谢出题和答疑(shui qun)的师傅们，没有你们的支持这次肯定不能顺利完赛
 
 > 预祝 2026@SUSCTF 越办越好 🎉

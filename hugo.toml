@@ -16,7 +16,7 @@ theme = 'github.com/adityatelange/hugo-PaperMod'
     lineNos = true               # 显示行号
     lineNumbersInTable = true    # 行号单独成列
     noClasses = false            # 使用 CSS 类（方便自定义）
-    style = 'dracula'            # 主题：dracula / github / monokai
+    style = 'github'            # 主题：dracula / github / monokai
 
 # 核心参数
 [params]
@@ -31,7 +31,7 @@ theme = 'github.com/adityatelange/hugo-PaperMod'
     enabled = true
     title = 'Lineance'
     subtitle = 'Learn. Journey. Bloom.'
-    imageUrl = 'img/avatar.png'  # 头像路径：static/img/avatar.png
+    imageUrl = '/img/avatar.png'
     imageWidth = 120
     imageHeight = 120
 

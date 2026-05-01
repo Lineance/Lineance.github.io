@@ -106,3 +106,47 @@
 .dark .profile-avatar {
     border-color: var(--border);
 }
+
+/* 自定义内容区 */
+.custom-card {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.custom-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: var(--primary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+}
+
+.custom-card p {
+    margin-bottom: 8px;
+}
+
+/* 文章元信息 */
+.meta-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: var(--primary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 5px 0;
+    color: var(--secondary);
+    border-bottom: 1px dashed var(--border);
+}
+
+.meta-row:last-child {
+    border-bottom: none;
+}
+
+.meta-row span:first-child {
+    color: var(--primary);
+}
