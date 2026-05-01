@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<article class="friends-page">
+    <header class="friends-header">
+        <h1 class="friends-title">{{ .Title }}</h1>
+        {{ if .Description }}
+        <p class="friends-desc">{{ .Description }}</p>
+        {{ end }}
+    </header>
+
+    <div class="friends-grid">
+        {{ range .Params.friends }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="friend-card">
+            <div class="friend-avatar-wrap">
+                {{ if .avatar }}
+                <img src="{{ .avatar }}" alt="{{ .name }}" class="friend-avatar" loading="lazy"
+                    onerror="this.style.display='none'">
+                {{ end }}
+            </div>
+            <div class="friend-info">
+                <div class="friend-name">{{ .name }}</div>
+                <div class="friend-desc">{{ .desc }}</div>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+
+    {{ if .Content }}
+    <div class="friends-content">
+        {{ .Content }}
+    </div>
+    {{ end }}
+</article>
+
+{{ end }}

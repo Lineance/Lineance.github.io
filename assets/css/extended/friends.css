@@ -1,0 +1,113 @@
+/* ========== 友链页面 ========== */
+.friends-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--gap);
+}
+
+.friends-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.friends-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.friends-desc {
+    font-size: 15px;
+    color: var(--secondary);
+}
+
+/* ========== 友链网格 ========== */
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.friend-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--entry);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.friend-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border-color: var(--secondary);
+}
+
+.friend-avatar-wrap {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.friend-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.friend-info {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.friend-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--primary);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.friend-desc {
+    font-size: 13px;
+    color: var(--secondary);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 正文内容区 */
+.friends-content {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* 暗色模式 */
+.dark .friend-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* 移动端单列 */
+@media (max-width: 640px) {
+    .friends-grid {
+        grid-template-columns: 1fr;
+    }
+}

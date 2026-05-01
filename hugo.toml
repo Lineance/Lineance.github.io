@@ -86,3 +86,8 @@ theme = 'github.com/adityatelange/hugo-PaperMod'
     name = '归档'
     url = '/archives'
     weight = 50
+  [[menu.main]]
+    identifier = 'friends'
+    name = '友链'
+    url = '/friends/'
+    weight = 60
