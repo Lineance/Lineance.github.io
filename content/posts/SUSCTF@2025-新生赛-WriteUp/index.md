@@ -4,7 +4,7 @@ draft = false
 title = 'SUSCTF@2025 新生赛 WriteUp'
 slug = 'susctf-2025-newcomers-writeup'
 author = 'laboon'
-tags = ['ctf-writeup']
+tags = ['ctf-writeup','cybersecurity']
 showtoc = true
 showrightsidebar = true
 rightSidebarWidgets = ["profile", "tags", "meta"]
@@ -13,6 +13,8 @@ sidebarBio = "Happy Hacking"
 +++
 
 ---
+
+![board](susctf@2025-board.webp)
 
 ## Flagdle
 
