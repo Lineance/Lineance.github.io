@@ -10,6 +10,7 @@ showrightsidebar = true
 rightSidebarWidgets = ["profile", "tags", "meta"]
 sidebarAuthor = "laboon"
 sidebarBio = "Happy Hacking"
+sidebarAvatar = "/img/avatar_ctf.webp"
 +++
 
 ---

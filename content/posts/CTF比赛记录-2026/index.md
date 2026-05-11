@@ -10,6 +10,7 @@ showrightsidebar = true
 rightSidebarWidgets = ["profile", "tags", "meta"]
 sidebarAuthor = "laboon"
 sidebarBio = "Happy Hacking"
+sidebarAvatar = "/img/avatar_ctf.webp"
 +++
 
 > 本栏目持续更新一些零散的2025-2026年 CTF 题目，以此记录

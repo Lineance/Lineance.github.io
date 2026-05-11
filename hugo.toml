@@ -30,7 +30,7 @@ theme = 'github.com/adityatelange/hugo-PaperMod'
     enabled = true
     title = 'Lineance'
     subtitle = 'Learn. Journey. Bloom.'
-    imageUrl = '/img/avatar.png'
+    imageUrl = '/img/avatar.webp'
     imageWidth = 120
     imageHeight = 120
 
