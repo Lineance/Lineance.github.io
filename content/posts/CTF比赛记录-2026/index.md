@@ -654,7 +654,7 @@ python rce.py -t http:// -u admin -p 1q2w3e -c "bash /tmp/caddy.sh"
 
 ## ACTF@2026
 
-### 12307
+### 12307 - Web
 
 这是一个模拟12307铁路售票系统的Web CTF题目，包含多个微服务：
 
@@ -702,7 +702,7 @@ python rce.py -t http:// -u admin -p 1q2w3e -c "bash /tmp/caddy.sh"
 
     Dockerfile中 `/usr/bin/base64` 设置了SUID位，可读取 `/flag`
 
-## 攻击步骤
+攻击步骤
 
 ```bash
 POST /api/mobile/identity/continue          # 1. 伪造身份
@@ -1088,7 +1088,7 @@ FLAG: ACTF{wHy_ar1_y0u_so0O0o0Oo0o_Fas1?????_C2Cfw6ryD94}
 ============================================================
 ```
 
-### ezssh
+### ezssh - Misc
 
 这是一道 **Misc/SSH 跳板** 类型的 CTF 题目。flag 被拆成三段，分散在内网不同主机上。需要通过 SSH 层层跳板，从 bastion → git-01 → backup-01（SFTP）→ 发现 ai-gateway-01 API，最终拼合完整 flag。
 
