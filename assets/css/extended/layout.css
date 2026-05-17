@@ -1,17 +1,30 @@
 .post-layout {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    /* 左右贴边 */
     align-items: flex-start;
-    gap: 72px;
-    max-width: none;
-    margin: 0;
-    padding: 0 24px;
+    gap: 48px;
+
+    /* 突破外层 .main 的宽度限制，占满屏幕 */
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    padding: 0 48px;
+    /* 距离浏览器最边缘一点空隙，可调节 */
+    box-sizing: border-box;
 }
 
 .post-single {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
+    /* 允许根据屏幕宽度缩放 */
     width: 100%;
-    max-width: 840px;
+    max-width: 100%;
+    /* 控制正文合适的最大宽度 */
     min-width: 0;
     position: relative !important;
     order: 2;
