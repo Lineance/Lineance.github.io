@@ -3,6 +3,8 @@
 /resources/_gen/
 .hugo_build.lock
 
+/draft/
+
 # 本地 Hugo 二进制（Windows / Linux / macOS）
 hugo.exe
 hugo
