@@ -43,3 +43,12 @@
         padding: 0;
     }
 }
+
+/* 强制使用等宽字体用于代码元素，避免继承到无衬线字体 */
+code,
+pre,
+.post-content code,
+.post-content pre,
+.academic-content code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", "Courier New", monospace;
+}
