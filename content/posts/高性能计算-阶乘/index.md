@@ -11,6 +11,7 @@ rightSidebarWidgets = ["profile", "tags", "meta"]
 sidebarAuthor = "lineance"
 sidebarBio = "Happy Learning"
 sidebarAvatar = "/img/avatar_study.webp"
+math = true
 +++
 
 ## 引言
@@ -98,9 +99,11 @@ HugeInteger operator*(const HugeInteger& other) const {
 ### 2.1 大数乘法的本质
 
 大数乘法本质上是多项式卷积运算。设有两个大整数：
+
 $$
 A = \sum_{i=0}^{n-1} a_i \cdot B^i, \quad B = \sum_{i=0}^{m-1} b_i \cdot B^i
 $$
+
 其中B是基数（如10^9）。
 
 乘积C = A × B可表示为：

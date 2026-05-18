@@ -12,12 +12,11 @@ theme = 'github.com/adityatelange/hugo-PaperMod'
   [markup.highlight]
     codeFences = true
     guessSyntax = true
-    lineNos = true               # 显示行号
-    lineNumbersInTable = true    # 行号单独成列
-    noClasses = false            # 使用 CSS 类（方便自定义）
-    style = 'github'            # 主题：dracula / github / monokai
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = 'github'
 
-# 核心参数
 [params]
 
   [params.profile]
@@ -25,7 +24,6 @@ theme = 'github.com/adityatelange/hugo-PaperMod'
   bio = "Learn lifelong, live limitlessly, love lavishly, leave a lasting legacy."
   avatar = "/img/avatar.png"
 
-  # Profile Mode
   [params.profileMode]
     enabled = true
     title = 'Lineance'
@@ -34,7 +32,6 @@ theme = 'github.com/adityatelange/hugo-PaperMod'
     imageWidth = 120
     imageHeight = 120
 
-  # 社交图标
   [[params.socialIcons]]
     name = 'email'
     url = 'mailto:you@email.com'
@@ -51,7 +48,7 @@ theme = 'github.com/adityatelange/hugo-PaperMod'
   ShowCodeCopyButtons = true
   ShowTags = true
   ShowCategories = true
-
+  env = 'production'
   math = true 
 
 [taxonomies]
