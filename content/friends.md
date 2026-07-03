@@ -13,5 +13,8 @@ friends:
     url: "https://www.yorozumoon.cn"
     desc: "濂珠沉葬，玉碎琉璃"
     avatar: "https://avatars.githubusercontent.com/u/218439649?v=4"
-
+  - name: "GlowLED"
+    url: "https://blog.glowled.top/"
+    desc: "一个混吃等死的普通人"
+    avatar: "https://blog.glowled.top/avatar/avatar_yamada.jpg"
 ---
