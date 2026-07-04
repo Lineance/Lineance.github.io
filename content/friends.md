@@ -17,4 +17,12 @@ friends:
     url: "https://blog.glowled.top/"
     desc: "一个混吃等死的普通人"
     avatar: "https://blog.glowled.top/avatar/avatar_yamada.jpg"
+  - name: "45dino"
+    url: "https://blog.45dino.me/"
+    desc: ""
+    avatar: "" 
+  - name: "SakiMidare"
+    url: "https://www.sakimidare.top/"
+    desc: "心臓は点滅するかしら……"
+    avatar: "https://www.sakimidare.top/_astro/avatar.DDuJmLsr_Z10nWFM.webp"  
 ---
